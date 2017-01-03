@@ -5,9 +5,9 @@
 ```JAVA
     ChooserActivity.start(MainActivity.this, null);
 ```
-
 2. 注册广播，接收选择结果
 ```JAVA
+    ...
     private BroadcastReceiver echoRegionReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -18,4 +18,12 @@
             }
         }
     };
+    
+      @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ChooserActivity.ACTION);
+
+        registerReceiver(echoRegionReceiver, intentFilter);
+    }
 ```
