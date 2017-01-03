@@ -1,16 +1,4 @@
 apply plugin: 'com.android.library'
-//
-//apply plugin: 'com.github.dcendents.android-maven'
-//apply plugin: 'com.jfrog.bintray'
-
-//publish {
-//    userOrg = 'nanck'      //bintray注册的用户名
-//    groupId = 'com.nanck.addresschoose'         //compile引用时的第1部分groupId
-//    artifactId = 'addresschoose'     //compile引用时的第2部分项目名
-//    publishVersion = '1.0.0'    //compile引用时的第3部分版本号
-//    desc = 'A simple android address selection component.'
-//    website = ''
-//}
 
 android {
     compileSdkVersion 25
