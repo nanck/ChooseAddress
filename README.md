@@ -1,6 +1,11 @@
 # ChooseAddressExample
 一个仿微信的简单的地址选择器。
 
+## Download
+> compile 'com.nanck.ChooseAddress:addresschoose:1.0.0'
+
+> module
+
 1.启动 ChooserActivity，第二个参数传 null
 ```JAVA
     ChooserActivity.start(MainActivity.this, null);
