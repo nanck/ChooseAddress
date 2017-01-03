@@ -1,5 +1,5 @@
 # ChooseAddressExample
-一个仿微信的简单的地址选择器。
+一个仿微信的简单地址选择器。
 
 ## Download
 > compile 'com.nanck.ChooseAddress:addresschoose:1.0.0'
