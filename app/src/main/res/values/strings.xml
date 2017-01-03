@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ChooseAddressExample</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="save">保存</string>
+    <string name="title_activity_main">保存地址</string>
+
+    <!-- 订单 / 地址 -->
+    <string name="consignee">收货人</string>
+    <string name="phone_number">手机号</string>
+    <string name="time_of_delivery">到货时间</string>
+    <string name="address_type">地址类型</string>
+    <string name="province">省份</string>
+    <string name="city">城市</string>
+    <string name="counties">县区</string>
+    <string name="streets">街道</string>
+    <string name="region_info">地区信息</string>
+    <string name="address_detail">详细地址</string>
+    <string name="set_to_the_default">设为默认</string>
+    <string name="address_is_default">默认地址</string>
+    <string name="address_new_label">+ 新建地址</string>
+    <!-- hints -->
+    <string name="hint_collecting_cargo">(收获不便时，可选择免费代收服务)</string>
+    <!--<string name="hint_consignee">请输入收货人真实姓名</string>-->
+    <string name="hint_consignee">真实姓名</string>
+    <!--<string name="hint_phone">请输入收货人手机号</string>-->
+    <string name="hint_phone">11位手机号</string>
+    <string name="hint_time_of_delivery">周一到周五收货</string>
+    <string name="hint_chooser_region">选择地区</string>
+    <string name="hint_address_detail">街道门牌信息</string>
+</resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_address_new"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.nanck.chooseaddressexample.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/LinearLayoutLineItemGroupStyle">
+
+            <TextView
+                android:id="@+id/text_address_new_consignee"
+                android:layout_width="@dimen/text_width_word4"
+                android:layout_height="wrap_content"
+                android:text="@string/consignee"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="16sp" />
+
+            <com.nanck.chooseaddressexample.EditTextWithDel
+                android:id="@+id/edit_address_new_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/hint_consignee"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="80"
+                android:maxLines="1"
+                android:nextFocusDown="@+id/edit_address_new_phone"
+                android:textColor="@color/colorTextNormal"
+                android:textSize="14sp"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size1"
+            android:background="@color/colorDivision" />
+
+        <LinearLayout style="@style/LinearLayoutLineItemGroupStyle">
+
+            <TextView
+                android:layout_width="@dimen/text_width_word4"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_number"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="16sp" />
+
+            <com.nanck.chooseaddressexample.EditTextWithDel
+                android:id="@id/edit_address_new_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:digits="0123456789"
+                android:hint="@string/hint_phone"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="80"
+                android:maxLines="1"
+                android:nextFocusDown="@+id/edit_address_new_detail"
+                android:textColor="@color/colorTextNormal"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size1"
+            android:background="@color/colorDivision" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_address_new_region"
+            style="@style/LinearLayoutLineItemGroupStyle">
+
+            <TextView
+                android:layout_width="@dimen/text_width_word4"
+                android:layout_height="wrap_content"
+                android:text="@string/region_info"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_address_new_region"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/hint_chooser_region"
+                android:textColor="@color/colorBlue600"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/hint_chooser_region"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size1"
+            android:background="@color/colorDivision" />
+
+        <LinearLayout style="@style/LinearLayoutLineItemGroupStyle">
+
+            <TextView
+                android:layout_width="@dimen/text_width_word4"
+                android:layout_height="wrap_content"
+                android:text="@string/address_detail"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="16sp" />
+
+            <com.nanck.chooseaddressexample.EditTextWithDel
+                android:id="@id/edit_address_new_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/hint_address_detail"
+                android:imeActionId="@+id/action_edit_address_new_detail"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:textColor="@color/colorTextNormal"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
