@@ -27,3 +27,6 @@
         registerReceiver(echoRegionReceiver, intentFilter);
     }
 ```
+
+![preview1](preview1.png) ![preview1](preview2.png)
+![preview1](preview3.png)
