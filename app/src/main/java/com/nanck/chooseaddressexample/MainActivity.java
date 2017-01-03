@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (!checkWhetherCanBeSaved()) {
                         return false;
                     }
-                    // TODO: 2017/1/1 Save address to server
+                    // TODO: 2017/1/1 Save address to your servers.
                 }
                 return true;
             }
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.tv_address_new_save:
-                // TODO: 2017/1/1 Save address to server
+                // TODO: 2017/1/1 Save address to your server.
                 break;
 
             default:
