@@ -13,6 +13,7 @@ package com.nanck.addresschoose;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.renderscript.ScriptGroup;
 import android.util.Log;
 
 import java.io.File;
@@ -42,7 +43,9 @@ public final class DBManager {
                 isParentExists = p.mkdirs();
             }
             if (!destFile.exists()) {
-                InputStream is = context.getResources().openRawResource(R.raw.area);
+//                InputStream is = context.getResources().openRawResource(R.raw.area);
+                InputStream is = context.getAssets().open("area.db");
+//                InputStream is = context.getResources().openRawResource(context.R.raw.area);
                 if (isParentExists) FileUtils.copyToFileOrThrow(is, destFile);
             }
 

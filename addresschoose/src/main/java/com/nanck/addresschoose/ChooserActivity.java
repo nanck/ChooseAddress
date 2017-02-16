@@ -12,11 +12,14 @@
 package com.nanck.addresschoose;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -27,24 +30,39 @@ import java.util.List;
  * <h3>目标</h3>
  * 1. 优化选择方式。返回结果更加优雅
  * 2. 支持使用其他 Module(如 app) 中的数据库文件
+ * //
+ * Context c = createPackageContext("chroya.demo", Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
+ * //载入这个类
+ * Class clazz = c.getClassLoader().loadClass("chroya.demo.Main");
+ * //新建一个实例
+ * Object owner = clazz.newInstance();
+ * //获取print方法，传入参数并执行
+ * Object obj = clazz.getMethod("print", String.class).invoke(owner, "Hello");
+ * //
  * 3. 爬虫最新行政区划数据。
  */
 public class ChooserActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private static final String TAG = "ChooserActivity";
 
     public static final String ART_PARAM1 = "area";
+    public static final String ART_LAST_CONTEXT = "last_context";
     public static final String ART_ADDRESS = "address";
     public static final String ACTION = "broadcast_action";
 
     public static String sAddress = "";
 
     private Area mArea;
+    private String lastContextPackageName;
+    private Context mLastContext;
+
     private AreaSelectorAdapter adapter;
 
-    public static void start(Activity context, @Nullable Area area) {
+    public static void start(Context context, @Nullable Area area) {
         Intent intent = new Intent(context, ChooserActivity.class);
         Bundle bundle = new Bundle();
         bundle.putParcelable(ART_PARAM1, area);
+        bundle.putString(ART_LAST_CONTEXT, context.getClass().getPackage().getName());
+        Log.d(TAG, "Last context package name:" + context.getClass().getPackage().getName());
         intent.putExtras(bundle);
         context.startActivity(intent);
     }
@@ -70,6 +88,21 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
 
         Bundle bundle = getIntent().getExtras();
         mArea = bundle.getParcelable(ART_PARAM1);
+        lastContextPackageName = bundle.getString(ART_LAST_CONTEXT);
+
+//        mLastContext= createPackageContext("chroya.demo", Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
+        try {
+            mLastContext = createPackageContext(lastContextPackageName, (Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY));
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, "Open last context name not found.");
+        }
+
+        Log.d(TAG, "--------------------------------------------------------");
+        Log.d(TAG, "--------------------------------------------------------");
+        Log.d(TAG, "This context : " + this);
+        Log.d(TAG, "Last context : " + mLastContext);
+        Log.d(TAG, "--------------------------------------------------------");
+        Log.d(TAG, "--------------------------------------------------------");
 
         List<Area> list;
         if (mArea == null) {
@@ -111,7 +144,7 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
         }
         Area area = (Area) adapter.getItem(i);
         if (area.getLevel() < 3) {
-            start(ChooserActivity.this, (Area) adapter.getItem(i));
+            start(this, (Area) adapter.getItem(i));
         } else {
             sAddress = sAddress + area.getName();
             Intent intent = new Intent();
