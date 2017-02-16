@@ -1,1 +1,1 @@
-include ':app', ':addresschoose'
+include ':sample', ':addresschoose'

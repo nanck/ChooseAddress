@@ -19,7 +19,7 @@ public class EditTextWithDel extends EditText {
 
     private Drawable mDrawable;
     private Context mContext;
-    private boolean isPreview = false;  // Drawable 是否已在屏幕上可见
+    private boolean isPreview = false;  // Drawable 是否已绘制在屏幕上
 
 
     public EditTextWithDel(Context context) {
