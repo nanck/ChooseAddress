@@ -1,10 +1,9 @@
-# ChooseAddressExample
+# ChooseAddress
 一个轻量级的、支持使用最新行政区划数据的地址选择器。
 
 ## Download
 > compile 'com.nanck.ChooseAddress:addresschoose:1.0.0'
 
-> module
 
 1.启动 ChooserActivity，第二个参数传 null
 ```JAVA

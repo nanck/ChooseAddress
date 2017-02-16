@@ -26,12 +26,12 @@ import java.util.List;
  * @author nanck 2016/12/2.
  */
 
-public class AreaDao {
+public class AreaDAO {
     private static final String TAG = "AreaDao";
     private Context context;
 
 
-    public AreaDao(Context context) {
+    public AreaDAO(Context context) {
         this.context = context;
     }
 
