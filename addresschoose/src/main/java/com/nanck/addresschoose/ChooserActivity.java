@@ -23,6 +23,12 @@ import android.widget.ListView;
 
 import java.util.List;
 
+/**
+ * <h3>目标</h3>
+ * 1. 优化选择方式。返回结果更加优雅
+ * 2. 支持使用其他 Module(如 app) 中的数据库文件
+ * 3. 爬虫最新行政区划数据。
+ */
 public class ChooserActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private static final String TAG = "ChooserActivity";
 
@@ -51,7 +57,6 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_chooser);
         toolbar.setTitle("");
-        // setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
