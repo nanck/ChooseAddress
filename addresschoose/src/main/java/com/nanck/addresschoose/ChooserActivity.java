@@ -68,10 +68,10 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
 
         List<Area> list;
         if (mArea == null) {
-            list = new AreaDao(this).fetchProvince();
+            list = new AreaDAO(this).fetchProvince();
         } else {
             sAddress = sAddress + mArea.getName() + " ";
-            list = new AreaDao(this).fetchSubAreaByFatherId(mArea.getId());
+            list = new AreaDAO(this).fetchSubAreaByFatherId(mArea.getId());
         }
         adapter = new AreaSelectorAdapter(this, list);
         lv.setAdapter(adapter);
