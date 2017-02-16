@@ -8,6 +8,7 @@
  * It also counts as the successor of the GNU Library Public License, > > version 2,
  * hence the version number 2.1.]
  */
+
 package com.nanck.addresschoose;
 
 import android.app.Activity;

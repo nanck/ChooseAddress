@@ -1,3 +1,14 @@
+/*
+ * Copyright (C) 2017 nanck
+ *
+ * 1999 Free Software Foundation, Inc. 59 Temple Place, Suite 330, Boston,
+ * MA 02111-1307 USA Everyone is > > permitted to copy and distribute verbatim copies of this license document,
+ * but changing it is not allowed.
+ * [This is the first released version of the Lesser GPL.
+ * It also counts as the successor of the GNU Library Public License, > > version 2,
+ * hence the version number 2.1.]
+ */
+
 package com.nanck.addresschoose;
 
 import android.content.Context;
@@ -14,7 +25,7 @@ import java.util.List;
  * @author nanck 2016/12/2.
  */
 
- class AreaSelectorAdapter extends BaseAdapter {
+class AreaSelectorAdapter extends BaseAdapter {
     private Context context;
     private List<Area> data = new ArrayList<>();
 
@@ -22,7 +33,7 @@ import java.util.List;
         this.context = context;
     }
 
-     AreaSelectorAdapter(Context context, List<Area> data) {
+    AreaSelectorAdapter(Context context, List<Area> data) {
         this.context = context;
         this.data = data;
     }
@@ -58,10 +69,10 @@ import java.util.List;
         return view;
     }
 
-    class ViewHolder {
+    private class ViewHolder {
         private TextView textView;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             this.textView = (TextView) view.findViewById(android.R.id.text1);
         }
     }

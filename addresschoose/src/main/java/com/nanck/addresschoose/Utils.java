@@ -7,7 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author nanck 2016/12/5.
+ * XXX 不好的方式
+ * Activity 管理工具类
+ *
+ * @author nanck
  */
 
 final class Utils {
