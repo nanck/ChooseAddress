@@ -32,7 +32,7 @@
     }
 ```
 ## Preview
-![preview1](preview3.png)
+![preview1](previewgif.gif)
 
 ## License
 > Copyright (C) 2017 nanck
