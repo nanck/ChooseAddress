@@ -9,9 +9,10 @@
  * hence the version number 2.1.]
  */
 
+
+
 package com.nanck.addresschoose;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;

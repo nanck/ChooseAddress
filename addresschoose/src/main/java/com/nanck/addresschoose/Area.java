@@ -1,3 +1,14 @@
+/*
+ * Copyright (C) 2017 nanck
+ *
+ * 1999 Free Software Foundation, Inc. 59 Temple Place, Suite 330, Boston,
+ * MA 02111-1307 USA Everyone is > > permitted to copy and distribute verbatim copies of this license document,
+ * but changing it is not allowed.
+ * [This is the first released version of the Lesser GPL.
+ * It also counts as the successor of the GNU Library Public License, > > version 2,
+ * hence the version number 2.1.]
+ */
+
 package com.nanck.addresschoose;
 
 import android.os.Parcel;
@@ -7,61 +18,53 @@ import android.os.Parcelable;
  * @author nanck 2016/12/1.
  */
 
-public class Area implements Parcelable {
+class Area implements Parcelable {
     private String code;
     private String name;
     private int id;
     private int level;
     private int fatherId;
 
-    public Area() {
+    Area() {
     }
 
-    public Area(String code, String name, int id, int level, int fatherId) {
-        this.code = code;
-        this.name = name;
-        this.id = id;
-        this.level = level;
-        this.fatherId = fatherId;
-    }
-
-    public String getCode() {
+    String getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    void setCode(String code) {
         this.code = code;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    void setId(int id) {
         this.id = id;
     }
 
-    public int getLevel() {
+    int getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    void setLevel(int level) {
         this.level = level;
     }
 
-    public int getFatherId() {
+    int getFatherId() {
         return fatherId;
     }
 
-    public void setFatherId(int fatherId) {
+    void setFatherId(int fatherId) {
         this.fatherId = fatherId;
     }
 
@@ -90,7 +93,7 @@ public class Area implements Parcelable {
         dest.writeInt(this.fatherId);
     }
 
-    protected Area(Parcel in) {
+    private Area(Parcel in) {
         this.code = in.readString();
         this.name = in.readString();
         this.id = in.readInt();

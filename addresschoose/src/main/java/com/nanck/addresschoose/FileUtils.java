@@ -14,7 +14,7 @@ import java.io.InputStream;
  *         SDK android.os.FileUtils
  */
 
-public final class FileUtils {
+final class FileUtils {
     private static final String TAG = "FileUtils";
 
     public static void copyFileOrThrow(File srcFile, File destFile) throws IOException {
@@ -23,7 +23,7 @@ public final class FileUtils {
     }
 
 
-    public static void copyToFileOrThrow(InputStream inputStream, File destFile)
+    static void copyToFileOrThrow(InputStream inputStream, File destFile)
             throws IOException {
         Log.d(TAG, inputStream.toString());
         boolean isDeleteS = true;
