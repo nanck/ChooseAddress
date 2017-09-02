@@ -26,23 +26,23 @@ import java.util.List;
  * @author nanck 2016/12/2.
  */
 
-public class AreaDAO {
+class AreaDAO {
     private static final String TAG = "AreaDao";
     private Context context;
 
 
-    public AreaDAO(Context context) {
+    AreaDAO(Context context) {
         this.context = context;
     }
 
-    public List<Area> fetchProvince() {
+    List<Area> fetchProvince() {
         String selection = AreaReaderContract.AreaEntry.LEVEL + " = ?";
         String[] selectionArgs = {"1"};
         return fetchAreaBySelection(selection, selectionArgs);
     }
 
 
-    public List<Area> fetchSubAreaByFatherId(int fatherId) {
+    List<Area> fetchSubAreaByFatherId(int fatherId) {
         String selection = AreaReaderContract.AreaEntry.FATHER_ID + " = ?";
         String[] selectionArgs = {String.valueOf(fatherId)};
         return fetchAreaBySelection(selection, selectionArgs);
