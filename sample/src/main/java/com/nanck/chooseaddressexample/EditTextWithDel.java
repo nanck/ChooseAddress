@@ -4,17 +4,17 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.EditText;
 
 
 /**
  * @author nanck on 2016/6/2.
  */
-public class EditTextWithDel extends EditText {
+public class EditTextWithDel extends AppCompatEditText {
     private static final String TAG = "EditTextWithDel";
 
     private Drawable mDrawable;
@@ -90,7 +90,7 @@ public class EditTextWithDel extends EditText {
 
     private void setDrawable() {
         if (length() < 1) {
-            setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+            setCompoundDrawablesWithIntrinsicBounds(getCompoundDrawables()[0], null, null, null);
             isPreview = false;
         } else {
             setCompoundDrawablesWithIntrinsicBounds(null, null, mDrawable, null);
