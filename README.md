@@ -31,6 +31,11 @@
         registerReceiver(echoRegionReceiver, intentFilter);
     }
 ```
+
+## TODO
+1. 顶部导航栏样式适配；
+2. 读数据库使用异步方式；
+
 ## Preview
 ![preview1](preview2.png) ![preview1](preview3.png)
 
