@@ -24,12 +24,11 @@ import java.util.List;
  * @author nanck 2016/12/2.
  */
 
-class AreaDAO {
+class AreaDao {
     private static final String TAG = "AreaDao";
     private Context context;
 
-
-    AreaDAO(Context context) {
+    AreaDao(Context context) {
         this.context = context;
     }
 
@@ -39,20 +38,17 @@ class AreaDAO {
         return fetchAreaBySelection(selection, selectionArgs);
     }
 
-
     List<Area> fetchSubAreaByFatherId(int fatherId) {
         String selection = AreaReaderContract.AreaEntry.FATHER_ID + " = ?";
         String[] selectionArgs = {String.valueOf(fatherId)};
         return fetchAreaBySelection(selection, selectionArgs);
     }
 
-
     private List<Area> fetchAreaBySelection(String selection, String[] selectionArgs) {
-//        DBManager db = DBHelper.getInstance(context);
         File path = context.getDatabasePath("area.db");
         Log.d(TAG, "database path : " + path);
-        SQLiteDatabase db = new DBManager(context).openDatabase(path);
 
+        SQLiteDatabase db = new DBManager(context).openDatabase(path);
         String[] projection = {
                 AreaReaderContract.AreaEntry.CODE,
                 AreaReaderContract.AreaEntry.FATHER_ID,
@@ -60,7 +56,6 @@ class AreaDAO {
                 AreaReaderContract.AreaEntry.LEVEL,
                 AreaReaderContract.AreaEntry.NAME
         };
-
 
         Cursor cursor = db.query(
                 AreaReaderContract.AreaEntry.TABLE_NAME,
@@ -73,8 +68,6 @@ class AreaDAO {
         );
 
         List<Area> areas = new ArrayList<>();
-
-//        c.moveToFirst();
         while (cursor.moveToNext()) {
             Area area = new Area();
 
@@ -98,7 +91,7 @@ class AreaDAO {
 
         cursor.close();
         db.close();
-
         return areas;
     }
+
 }

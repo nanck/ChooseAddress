@@ -34,15 +34,9 @@ class AreaSelectorAdapter extends BaseAdapter {
         this.context = context;
     }
 
-    AreaSelectorAdapter(Context context, List<Area> data) {
-        this.context = context;
-        this.data = data;
-    }
-
     void setData(@NonNull List<Area> data) {
         this.data = data;
     }
-
 
     @Override
     public int getCount() {
@@ -82,4 +76,5 @@ class AreaSelectorAdapter extends BaseAdapter {
             this.textView = (TextView) view.findViewById(android.R.id.text1);
         }
     }
+
 }

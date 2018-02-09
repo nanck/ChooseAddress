@@ -17,7 +17,6 @@ import android.os.Parcelable;
 /**
  * @author nanck 2016/12/1.
  */
-
 class Area implements Parcelable {
     private String code;
     private String name;

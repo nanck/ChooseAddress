@@ -13,7 +13,6 @@ package com.nanck.addresschoose;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.renderscript.ScriptGroup;
 import android.util.Log;
 
 import java.io.File;

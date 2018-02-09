@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">@color/colorRed600</color>
-    <color name="colorPrimaryDark">@color/colorYellow600</color>
+    <color name="colorPrimaryDark">@color/colorGrey500</color>
     <color name="colorAccent">@color/colorRedA200</color>
-
-    <!--<color name="colorPrimary">#3F51B5</color>-->
-    <!--<color name="colorPrimaryDark">#303F9F</color>-->
-    <!--<color name="colorAccent">#FF4081</color>-->
-    <!--<color name="colorWhite">#FFFFFF</color>-->
-    <!--<color name="colorBlack">#000000</color>-->
-    <color name="colorGray">#dcdcdc</color>
-    <color name="color64">#646464</color>
-    <color name="colorTitle">#B19057</color>
     <color name="colorDivision">#F3F3F3</color>
-    <color name="registerBlue">#1778BC</color>
-
-
-    <!-- Shopping cart -->
-    <color name="colorCartEditText">#ff3d00</color>
-    <color name="colorCheckBoxCheckEd">@color/colorOrange900</color>
 
     <!-- Text colors -->
     <color name="colorTextTitle">#333333</color>

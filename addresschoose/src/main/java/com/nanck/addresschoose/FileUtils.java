@@ -11,9 +11,7 @@ import java.io.InputStream;
 
 /**
  * @author nanck 2016/12/12.
- *         SDK android.os.FileUtils
  */
-
 final class FileUtils {
     private static final String TAG = "FileUtils";
 

@@ -92,7 +92,7 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
         adapter = new AreaSelectorAdapter(ChooserActivity.this);
         lv.setAdapter(adapter);
 
-        final AreaDAO dao = new AreaDAO(this);
+        final AreaDao dao = new AreaDao(this);
 //        List<Area> listTemp;
 //        if (mArea == null) {
 //            listTemp = dao.fetchProvince();
@@ -139,13 +139,6 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
     ///////////////////////////////////////////////////////////////////////////
     private Handler mHandler;
 
-    private void testHandleThread() {
-        MyHandleThread myHandleThread = new MyHandleThread("name");
-        myHandleThread.start();
-        mHandler = new Handler(myHandleThread.getLooper());
-
-        mHandler.post(myHandleThread);
-    }
 
     @Override
     public void onBackPressed() {
