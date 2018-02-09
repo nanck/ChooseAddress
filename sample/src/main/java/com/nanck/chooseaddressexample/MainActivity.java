@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nanck.addresschoose.ChooserActivity;
+import com.squareup.leakcanary.LeakCanary;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

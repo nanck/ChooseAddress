@@ -13,9 +13,7 @@ package com.nanck.addresschoose;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteCursorDriver;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteQuery;
 import android.util.Log;
 
 import java.io.File;
@@ -64,41 +62,41 @@ class AreaDAO {
         };
 
 
-        Cursor c = db.query(
-                AreaReaderContract.AreaEntry.TABLE_NAME,                     // The table to query
-                projection,                               // The columns to return
-                selection,                                // The columns for the WHERE clause
-                selectionArgs,                            // The values for the WHERE clause
-                null,                                     // don't group the rows
-                null,                                     // don't filter by row groups
-                null                                 // The sort order
+        Cursor cursor = db.query(
+                AreaReaderContract.AreaEntry.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
         );
 
         List<Area> areas = new ArrayList<>();
 
 //        c.moveToFirst();
-        while (c.moveToNext()) {
+        while (cursor.moveToNext()) {
             Area area = new Area();
 
-            String code = c.getString(c.getColumnIndex(AreaReaderContract.AreaEntry.CODE));
+            String code = cursor.getString(cursor.getColumnIndex(AreaReaderContract.AreaEntry.CODE));
             area.setCode(code);
 
-            String name = c.getString(c.getColumnIndex(AreaReaderContract.AreaEntry.NAME));
+            String name = cursor.getString(cursor.getColumnIndex(AreaReaderContract.AreaEntry.NAME));
             area.setName(name);
 
-            int id = c.getInt(c.getColumnIndex(AreaReaderContract.AreaEntry.ID));
+            int id = cursor.getInt(cursor.getColumnIndex(AreaReaderContract.AreaEntry.ID));
             area.setId(id);
 
-            int fatherId = c.getInt(c.getColumnIndex(AreaReaderContract.AreaEntry.FATHER_ID));
+            int fatherId = cursor.getInt(cursor.getColumnIndex(AreaReaderContract.AreaEntry.FATHER_ID));
             area.setFatherId(fatherId);
 
-            int level = c.getInt(c.getColumnIndex(AreaReaderContract.AreaEntry.LEVEL));
+            int level = cursor.getInt(cursor.getColumnIndex(AreaReaderContract.AreaEntry.LEVEL));
             area.setLevel(level);
 
             areas.add(area);
         }
 
-        c.close();
+        cursor.close();
         db.close();
 
         return areas;

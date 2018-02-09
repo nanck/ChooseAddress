@@ -12,6 +12,7 @@
 package com.nanck.addresschoose;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,7 @@ class AreaSelectorAdapter extends BaseAdapter {
     private Context context;
     private List<Area> data = new ArrayList<>();
 
-    public AreaSelectorAdapter(Context context) {
+    AreaSelectorAdapter(Context context) {
         this.context = context;
     }
 
@@ -38,9 +39,14 @@ class AreaSelectorAdapter extends BaseAdapter {
         this.data = data;
     }
 
+    void setData(@NonNull List<Area> data) {
+        this.data = data;
+    }
+
+
     @Override
     public int getCount() {
-        return data.size();
+        return data == null ? 0 : data.size();
     }
 
     @Override
