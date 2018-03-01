@@ -10,7 +10,7 @@ import java.util.List;
  * XXX 不好的方式
  * Activity 管理工具类
  *
- * @author nanck
+ * @author nanck 2017/12/12.
  */
 
 final class Utils {
