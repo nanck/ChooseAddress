@@ -1,10 +1,10 @@
-# ChooseAddress
+## summary
 一个轻量级的，行政区划地址选择器。
 
 ## Download
 > compile 'com.nanck.ChooseAddress:addresschoose:1.0.0'
 
-
+## Usage
 1.启动 ChooserActivity，第二个参数传 null
 ```JAVA
     ChooserActivity.start(MainActivity.this, null);
