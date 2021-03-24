@@ -32,7 +32,7 @@
     }
 ```
 ## Preview
-[](https://github.com/nanck/ChooseAddress/blob/master/art/previewgif.gif)
+![](https://github.com/nanck/ChooseAddress/blob/master/art/previewgif.gif)
 
 ## TODO
 1. 顶部导航栏样式适配；
